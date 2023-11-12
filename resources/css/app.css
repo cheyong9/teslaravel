@@ -1,5 +1,3 @@
-@font-face {
-    font-family: cheyong;
-    src: url("cheyong.otf") format("opentype");
-}
-body{font-family: cheyong;}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

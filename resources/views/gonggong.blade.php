@@ -13,7 +13,7 @@
 
 <div class="">
  <h1>Gonggong</h1>
- {{ URL::asset('css/app.css'); }} 
+ 
 </div>
 
 </body>
