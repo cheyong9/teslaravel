@@ -1,0 +1,1 @@
+Tugas besok: saya harus bisa modif database semua. dan buat database semua. setelah itu tugas besok lusa saya harus bisa mengakses database lewat laravel, dan membuat form
