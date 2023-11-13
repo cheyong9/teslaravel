@@ -19,12 +19,20 @@ Route::get('/test-koneksi-database', function() {
 
 Membuat database dari migration laravel
 
-php artisan make:model namatabel-Siswa --migration
+php artisan make:model namatabel-barang --migration
 
-Terus di class migration tabel namatabel-Siswa buat aja apa kolom yang harus dibuat
-misalnya noinduk siswa, nama
+Setelah udah buat model kemudian
+php artisan make:migration add_nisnama_to_barangs --table=barangs
+
+Kemudian di function up tambahkan
 $table->string('nis', 50);
 $table->string('nama', 100);
+
+dan di function down tambahkan
+$table->dropColumn('nis');
+$table->dropColumn('nama');
+
+Function down penting untuk rollback karena bekerja team
 
 terus untuk menambahkan ke database
 php artisan migrate

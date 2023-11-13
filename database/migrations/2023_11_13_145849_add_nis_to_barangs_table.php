@@ -25,6 +25,8 @@ return new class extends Migration
     {
         Schema::table('barangs', function (Blueprint $table) {
             //
+            $table->dropColumn('nis');
+            $table->dropColumn('nama');
         });
     }
 };
