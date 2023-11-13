@@ -28,4 +28,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/test-koneksi-database', function() {
+	try {
+		\DB::connection()->getPdo();
+
+		echo 'Sudah terkoneksi dengan database: ' . \DB::connection()->getDatabaseName();
+
+	} catch (\Exception $e) {
+		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
+	}
+});
+
 require __DIR__.'/auth.php';

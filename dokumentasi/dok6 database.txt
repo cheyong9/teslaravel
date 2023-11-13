@@ -1,0 +1,30 @@
+Tugas besok: saya harus bisa modif database semua. dan buat database semua. setelah itu tugas besok lusa saya harus bisa mengakses database lewat laravel, dan membuat form
+
+
+Routes
+
+Route::get('/test-koneksi-database', function() {
+	try {
+		\DB::connection()->getPdo();
+
+		echo 'Sudah terkoneksi dengan database: ' . \DB::connection()->getDatabaseName();
+
+	} catch (\Exception $e) {
+		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
+	}
+});
+
+
+
+
+Membuat database dari migration laravel
+
+php artisan make:model namatabel-Siswa --migration
+
+Terus di class migration tabel namatabel-Siswa buat aja apa kolom yang harus dibuat
+misalnya noinduk siswa, nama
+$table->string('nis', 50);
+$table->string('nama', 100);
+
+terus untuk menambahkan ke database
+php artisan migrate
