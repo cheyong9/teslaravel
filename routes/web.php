@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/halamanutama', function () {
+    return view('halamanutama');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -38,5 +42,7 @@ Route::get('/test-koneksi-database', function() {
 		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
 	}
 });
+Route::get('barang','App\Http\Controllers\barangController@index');
+
 
 require __DIR__.'/auth.php';

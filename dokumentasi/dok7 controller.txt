@@ -1,0 +1,13 @@
+php artisan make:controller barangController
+
+Nanti  muncul Controllernya
+
+Cara memanggil dari route di web.php adalah sebagai berikut
+
+Route::get('/barang','App\Http\Controllers\barangController@index');
+
+
+Untuk controller include database
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
